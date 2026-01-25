@@ -8,9 +8,74 @@
     <title>Coding conf</title>
     <!-- css -->
        <link href="./output.css" rel="stylesheet">
+       <style>
+    /* كود خاص لقص حواف التذكرة (Notches) */
+    .ticket-container {
+        position: relative;
+        mask-image: radial-gradient(circle at left 0px, transparent 15px, black 16px),
+                    radial-gradient(circle at right 0px, transparent 15px, black 16px);
+        /* أماكن الدوائر المقصوصة عند خط التقطيع */
+        -webkit-mask-image: radial-gradient(circle at 78% 0px, transparent 15px, black 16px),
+                            radial-gradient(circle at 78% 100%, transparent 15px, black 16px);
+    }
+    body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0b0827;
+    /* تأثير الشبكة والخلفية المتدرجة */
+    background-image: 
+        radial-gradient(circle at 0% 100%, rgba(247, 116, 98, 0.15), transparent 40%),
+        radial-gradient(circle at 100% 0%, rgba(141, 125, 255, 0.15), transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+}
+</style>
 </head>
-<body>
-    
+<body class="min-h-screen flex flex-col items-center py-12 px-4">
+    <div class="min-h-screen flex flex-col items-center py-12 px-4">
+    <div class="flex items-center gap-2 mb-16">
+         
+        <span class="text-white font-bold text-2xl"><img src="../img/logo-full.svg" alt=""></span>
+    </div>
+
+    <div class="text-center max-w-2xl mb-16">
+        <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Congrats, <span class="text-[#f77462]" id="displayName">Jonatan Kristof</span>! <br> Your ticket is ready.
+        </h1>
+        <p class="text-gray-400 text-lg">
+            We've emailed your ticket to <span class="text-[#f77462]" id="displayEmail">jonatan@email.com</span> 
+            and will send updates in the run up to the event.
+        </p>
+    </div>
+
+    <div class="ticket-container w-full max-w-xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex shadow-2xl relative overflow-hidden">
+        
+        <div class="flex-1 flex flex-col justify-between pr-10 border-r border-dashed border-white/20">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <img src="logo.svg" class="w-8">
+                    <h2 class="text-white text-3xl font-bold italic tracking-tight">Coding Conf</h2>
+                </div>
+                <p class="text-gray-400 text-sm ml-11">Jan 31, 2025 / Austin, TX</p>
+            </div>
+
+            <div class="flex items-center gap-4 mt-12">
+                <img src="user-placeholder.jpg" id="ticketAvatar" class="w-16 h-16 rounded-xl object-cover border border-white/20">
+                <div>
+                    <h3 id="ticketName" class="text-white text-2xl font-bold">Jonatan Kristof</h3>
+                    <div class="flex items-center gap-2 text-gray-400">
+                        <img src="github-icon.svg" class="w-4 opacity-60">
+                        <span id="ticketGithub">@jonatankristof0101</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-20 flex items-center justify-center">
+            <span class="text-gray-500 font-mono text-2xl tracking-widest uppercase rotate-90 whitespace-nowrap">#01609</span>
+        </div>
+    </div>
+</div>
 
     <!-- scripit  -->
      <script src="index.js"></script>
