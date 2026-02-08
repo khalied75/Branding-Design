@@ -37,5 +37,5 @@ const dropzone = document.getElementById('dropzone');
                 email: document.getElementById('email').value,
                 github: document.getElementById('github').value
             }));
-            window.location.href = "/page2/index.html';
+            window.location.href = "/page2/index.html";
         };
